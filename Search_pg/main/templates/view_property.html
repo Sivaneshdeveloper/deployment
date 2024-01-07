@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Searchstayinn</title>
+
+   <!-- font awesome cdn link  -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+   <!-- custom css file link  -->
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='pg.css') }}"/>
+
+</head>
+<body>
+
+<section class="view-property">
+   {% for hostel in hostels %}
+   <div class="details">
+      <div class="thumb">
+         <div class="big-image">
+            <img src="data:;base64,{{hostel.photos}}" alt="">
+         </div>
+      </div>
+      <h3 class="name">{{hostel.name}}</h3>
+      <p class="location"><i class="fas fa-map-marker-alt"></i><a href="{{hostel.g_location}}">{{hostel.g_location}}</a></p>
+      <div class="info">
+         <p><i class="fas fa-rupee-sign"></i><span>{{hostel.price}}</span></p>
+         <p><i class="fas fa-user"></i><span>{{hostel.client_name}}(owner)</span></p>
+         <p><i class="fas fa-phone"></i><a href="tel:{{hostel.mobile}}">{{hostel.mobile}}</a></p>
+         <p><i class="fas fa-hamburger"></i><span>{{hostel.food_type}}</span></p>
+         <p><i class="fas fa-temperature-high"></i><span>{{hostel.room_type}}</span></p>
+         <p><i class="fas fa-calendar"></i><span>{{hostel.created_by}}</span></p>
+      </div>
+      <h3 class="title">details</h3>
+      <div class="flex">
+         <div class="box">
+            <p><i>Sharing rooms :</i><span>{{hostel.sharing}}</span></p>
+            <p><i>deposit amount :</i><span>{{hostel.pre_advanced}}</span></p>
+            <p><i>status :</i><span>ready to move</span></p>
+            <p><i>city :</i><span>{{hostel.location}}</span></p>
+            <p><i>pincode :</i><span>{{hostel.pincode}}</span></p>
+            <p><i>type :</i><span>{{hostel.pg_type}} pg</span></p>
+         </div>
+         <div class="box">
+            <p><i>car parking :</i><span>{{hostel.car_parking}}</span></p>
+            <p><i>bike parking :</i><span>{{hostel.bike_parking}}</span></p>
+         </div>
+      </div>
+      <h3 class="title">amenities</h3>
+      <div class="flex">
+         <div class="box">
+            {% for lifts in hostel.facilities %}
+            <p><i class="fas fa-check"></i><span>{{lifts}}</span></p>
+            {% endfor %}
+         </div>
+      </div>
+
+      <h3 class="title">description</h3>
+      <p class="description">Please do not pay to anyone without enquiry Hostel details.For more enquiry contact to PG owners.</p>
+
+   </div>
+   {% endfor %}
+
+</section>
+
+
+<!-- footer section ends -->
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>

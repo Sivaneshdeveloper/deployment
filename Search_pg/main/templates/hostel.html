@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Searchstayinn</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mainpage.css') }}"/>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Hostel Form
+         </div>
+        <form action="" method="post" enctype="multipart/form-data">
+            <input class="field" type="text" name="name" placeholder="Hostel name" required/>
+            <input class="field" type="text" name="phone" placeholder="Phone Number" required/>
+            <input class="field" type="text" name="price" placeholder="Start Price" required/>
+            <input class="field" type="text" name="advanceprice" placeholder="Advanced Price" required/>
+            <input class="field" type="text" name="pincode" placeholder="Pincode" required/>
+            <select name="location" class="field" required >
+            <option value="" disabled selected hidden>Choose location</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Hyderabad">Hyderabad</option>
+            </select>
+
+        <select name="room" class="field" required>
+             <option value="" disabled selected hidden>Room type</option>
+            <option value="Ac">AC</option>
+            <option value="Non ac">NON AC</option>
+            <option value="Both ac and non ac">BOTH AC and NON AC</option>
+            </select>
+        <select name="food" class="field" required>
+             <option value="" disabled selected hidden>Food type</option>
+            <option value="Veg">Veg</option>
+            <option value="Non veg">Non veg</option>
+            <option value="Both veg and non veg">Both veg and non veg</option>
+            </select>
+        <select name="gender" class="field" required>
+             <option value="" disabled selected hidden>Choose Gender</option>
+            <option value="Men">Men</option>
+            <option value="Women">Women</option>
+            <option value="Unisex">Unisex</option>
+            </select><br><br>
+            <p>Bike parking?</p>
+            <label class="custom-radio">
+                <input type="radio" name="bike" value="Yes">
+                Yes
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="bike" value="No">
+                No
+            </label><br><br>
+            <p>Car parking?</p>
+            <label class="custom-radio">
+                <input type="radio" name="car" value="Yes">
+                Yes
+            </label>
+            <label class="custom-radio">
+                <input type="radio" name="car" value="No">
+                No
+            </label><br><br>
+        <p>Facilities</p>
+            <input type="checkbox" name="facilities" value="Washing machine">Washing machine<br>
+            <input type="checkbox" name="facilities" value="television">television<br>
+            <input type="checkbox" name="facilities" value="water heater">water heater<br>
+            <input type="checkbox" name="facilities" value="dining hall">dining hall<br>
+            <input type="checkbox" name="facilities" value="Wifi">Wifi<br>
+            <input type="checkbox" name="facilities" value="Power backup">Power backup<br>
+            <input type="checkbox" name="facilities" value="refrigerator">refrigerator<br></br>
+        <a>Sharing rooms</a>
+        <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="one">
+                  <label >one</label>
+               </div>
+               <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="two">
+                  <label >two</label>
+               </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="three">
+                  <label >three</label>
+               </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="four">
+                  <label >four</label>
+               </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="five">
+                  <label >five</label>
+               </div>
+        </div>
+        <div class="content">
+               <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="six">
+                  <label >six</label>
+               </div>
+               <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="seven">
+                  <label >seven</label>
+               </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="eight">
+                  <label >eight</label>
+               </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="nine">
+                  <label >nine</label>
+               </div>
+                <div class="checkbox">
+                  <input type="checkbox" name="rooms" value="ten">
+                  <label >ten</label>
+               </div>
+        </div><br>
+        <div>
+        <label for="images" class="drop-container" id="dropcontainer">
+            <span class="drop-title">Upload hostel pictures</span>
+            or
+            <input type="file" name="file" id="images" accept="image/*" required >
+        </label>
+        </div><br>
+         <p>
+            Hostel location
+            <input type="text"  name="link" placeholder="copy link google map!" required>
+            </input>
+        </p><br>
+        <div class="field">
+               <input type="submit" value="Submit">
+        </div>
+        </form>
+          <script>src="js/cc.js"</script>
+      </div>
+   </body>
+</html>

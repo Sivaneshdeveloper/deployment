@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal -->
+<html lang="en" dir="ltr">
+   <head>
+      <meta charset="utf-8">
+      <title>Searchstayinn</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='mainpage.css') }}"/>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="title">
+            Registration Form
+         </div>
+         <form action="" method="post">
+            <div class="field">
+               <input type="text" name="firstname" required>
+               <label>First name</label>
+            </div>
+            <div class="field">
+               <input type="text" name="lastname" required>
+               <label>Last name</label>
+            </div>
+             <div class="field">
+               <input type="password"  id="password" required>
+               <label>New Password</label>
+            </div>
+            <div class="field">
+               <input type="password" name="password" id="confirm_password" required>
+               <label>Confirm Password</label>
+            </div>
+            <div class="field">
+               <input type="submit" value="Submit">
+            </div>
+         </form>
+      </div>
+   </body>
+</html>
+
+<script>
+var password = document.getElementById("password")
+  , confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+</script>
